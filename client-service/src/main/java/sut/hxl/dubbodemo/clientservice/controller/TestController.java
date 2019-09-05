@@ -13,7 +13,7 @@ import stu.hxl.dubbodemo.api.IOrderService;
 @RestController
 public class TestController {
 
-    @Reference
+    @Reference(loadbalance = "random", mock = "sut.hxl.dubbodemo.clientservice.mock.OrderServiceMock", timeout = 1, cluster = "failfast")
     private IOrderService orderService;
 
     @GetMapping("/test")

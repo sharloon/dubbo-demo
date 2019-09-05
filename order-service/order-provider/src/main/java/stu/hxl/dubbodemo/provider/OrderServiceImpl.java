@@ -12,6 +12,15 @@ public class OrderServiceImpl implements IOrderService {
 
     @Override
     public String queryOrder(String no) {
+
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("******************************服务端被调用*************************************");
+
         return "订单查询成功，订单号为：" + no;
     }
 }
